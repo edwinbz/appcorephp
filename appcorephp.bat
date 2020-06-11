@@ -6,7 +6,6 @@ if /I "%c%" EQU "Y" goto :somewhere
 if /I "%c%" EQU "N" goto :somewhere_else
 goto :choice
 
-
 :somewhere
 curl -O https://raw.githubusercontent.com/edwinbz/appcorephp/master/commutator.php
 CD ./src/app 
