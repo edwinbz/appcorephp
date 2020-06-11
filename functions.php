@@ -83,7 +83,8 @@ function _isActive($rootLink)
     }
 }
 
-function generateRandomString($length = 10) {
+function generateRandomString($length = 10)
+{
     $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
     $charactersLength = strlen($characters);
     $randomString = '';
@@ -91,4 +92,12 @@ function generateRandomString($length = 10) {
         $randomString .= $characters[rand(0, $charactersLength - 1)];
     }
     return $randomString;
+}
+
+function _getFirst($array)
+{
+    if (count($array) > 0) {
+        return $array[0];
+    }
+    return $array;
 }
