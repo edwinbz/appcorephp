@@ -1,5 +1,5 @@
 <?php
-// Global App functions
+// Global App Functions
 function _response($success = false, $msg = '', $data = [], $code = 0) // Responder peticiones AJAX con formato JSON
 
 {
@@ -100,4 +100,23 @@ function _getFirst($array)
         return $array[0];
     }
     return $array;
+}
+
+function _formatPhone($n)
+{
+    if (strlen($n) == 10) { // Celular
+        $nF = substr($n, 0, 3) . ' ';
+        $nF .= substr($n, 3, 3) . ' ';
+        $nF .= substr($n, 6, 4);
+        return $nF;
+    } else {
+        $nF = substr($n, 0, 3) . ' ';
+        $nF .= substr($n, 3, 4);
+        return $nF;
+    }
+}
+
+function _formatDate($d)
+{
+    return date("g:i a", strtotime($d));
 }
